@@ -4,7 +4,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { useWeather } from '../hooks/useWeather';
 import { moodConfig } from '../utils/moodConfig';
 import MoodCard from './MoodCard';
-import "../styles/MoodMate.css";
 
 import CustomCalendar from './CalenderView';
 import HeaderInfo from './HeaderInfo';
@@ -27,7 +26,8 @@ interface MoodEntry {
 }
 
 const MoodMate: React.FC = () => {
-  const [selectedMood, setSelectedMood] = useState<string>('');
+  
+const [selectedMood, setSelectedMood] = useState<any>('');
   const [note, setNote] = useState<string>('');
   const [entries, setEntries] = useState<MoodEntry[]>([]);
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
@@ -58,7 +58,7 @@ const MoodMate: React.FC = () => {
     };
     setEntries([entry, ...entries]);
     setNote('');
-    setSelectedMood('');
+    setSelectedMood(' ');
   };
 
   const bgGradient = moodConfig[selectedMood]?.gradient || 'linear-gradient(to right, #ffffff, #f3f3f3)';

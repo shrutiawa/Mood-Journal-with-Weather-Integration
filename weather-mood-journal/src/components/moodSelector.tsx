@@ -19,7 +19,7 @@ const MoodSelector: React.FC<MoodSelectorProps> = ({ selectedMood, setSelectedMo
           className={`text-3xl p-2 rounded-full cursor-pointer`}
           style={{
             backgroundColor: isSelected ? color : '',
-            ringColor: isSelected ? color : '',  
+            // ringColor: isSelected ? color : '',  
             backgroundImage: isSelected ? gradient : '',
             borderWidth: isSelected ? '2px' : '0px',
           }}

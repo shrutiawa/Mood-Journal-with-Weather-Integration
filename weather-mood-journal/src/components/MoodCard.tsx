@@ -1,4 +1,4 @@
-export default function MoodCard({ mood, note, date, temp, icon }) {
+export default function MoodCard({ mood, note, date, temp, icon }:any) {
     return (
       <div className="bg-white p-4 rounded-lg shadow flex items-start justify-between">
         <div>

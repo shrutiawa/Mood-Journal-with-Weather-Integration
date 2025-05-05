@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-export default function CustomCalendar({ selectedDate, setSelectedDate }) {
+interface CustomCalendarProps {
+  selectedDate: Date | null;
+  setSelectedDate: any; 
+}
+
+const CustomCalendar: React.FC<CustomCalendarProps>= ({ selectedDate, setSelectedDate }) => {
   const [activeStartDate, setActiveStartDate] = useState(new Date());
 
   const years = Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - 50 + i);
@@ -10,19 +15,19 @@ export default function CustomCalendar({ selectedDate, setSelectedDate }) {
     new Date(0, i).toLocaleString('default', { month: 'long' })
   );
 
-  const updateCalendarDate = (newYear, newMonth) => {
+  const updateCalendarDate = (newYear: number, newMonth: number) => {
     const updated = new Date(activeStartDate);
     updated.setFullYear(newYear);
     updated.setMonth(newMonth);
     setActiveStartDate(new Date(updated));
   };
 
-  const handleYearChange = (e) => {
+  const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newYear = parseInt(e.target.value, 10);
     updateCalendarDate(newYear, activeStartDate.getMonth());
   };
 
-  const handleMonthChange = (e) => {
+  const handleMonthChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newMonth = parseInt(e.target.value, 10);
     updateCalendarDate(activeStartDate.getFullYear(), newMonth);
   };
@@ -64,3 +69,4 @@ export default function CustomCalendar({ selectedDate, setSelectedDate }) {
       />
   );
 }
+export default  CustomCalendar
