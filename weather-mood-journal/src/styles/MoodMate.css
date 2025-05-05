@@ -1,0 +1,123 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.react-calendar {
+  border: none;
+  width: 100%;
+  font-family: inherit;
+  background: none !important;
+  width: 100% !important;
+  font-size: 0.9rem;
+}
+
+.react-calendar__tile--active {
+  background-color: #3b82f6 !important;
+  color: white !important;
+  border-radius: 0.5rem;
+}
+
+.react-calendar__navigation__label:hover {
+  background: none !important;
+}
+
+.custom-calendar {
+  border: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  max-width: 100%;
+}
+
+.mainContainer {
+  width: 100%;
+  max-width: 80%;
+  padding: 2rem;
+  border-radius: 12px;
+  background: inherit;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #333;
+}
+
+.header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inside-card {
+  display: flex;
+  gap: 10%;
+  margin: 20px;
+}
+
+.mood {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+}
+.fixed-textarea {
+  width: 100%;
+  height: 8rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  resize: none;
+  margin-bottom: 1rem;
+}
+.btn {
+  border-radius: 5px;
+  background: #3b82f6;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #3b82f6;
+  background: white;
+  border: 2px solid #3b82f6;
+}
+
+.calender {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+}
+@media screen and (max-width: 768px) {
+  .mainContainer {
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  .inside-card {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .mood {
+    gap: 2rem;
+  }
+
+  .calender {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .header-info {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .fixed-textarea {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
